@@ -6,7 +6,7 @@ import streamlit as st
 from os import getenv
 st.set_page_config(layout='wide')
 
-MODEL_OPTIONS = ['gpt-3.5-turbo-0125', 'gpt-3.5-turbo-16k-0613', 'gpt-4-turbo', 'gpt-4-0613']
+MODEL_OPTIONS = ['gpt-3.5-turbo-0125', 'gpt-3.5-turbo-16k-0613', 'gpt-4-turbo', 'gpt-4-0613', 'gpt-4o-mini']
 
 if 'msg' not in ss:
     ss.msg = {'chat1': [], 'chat2': [], 'chat3': [], 'chat4': []}
@@ -67,7 +67,7 @@ async def main():
     st.title(f"Prompt Tester !")
 
     with st.form('system_prompt'):
-        st.text_input('System prompt', type='default', key='system_prompt', value="Anwser with emoji only.")
+        st.text_area('System prompt', key='system_prompt', value="Anwser with emoji only.")
         st.form_submit_button('Update', on_click=submit_system_prompt)
 
     col1, col2, col3, col4 = st.columns(4, gap='large')
