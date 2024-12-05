@@ -4,3 +4,4 @@ __pycache__/
 config.py
 src/config.py
 secrets.sh
+src/page/output
