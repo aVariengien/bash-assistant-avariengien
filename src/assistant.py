@@ -26,7 +26,7 @@ model_options = [
 selected_model = st.selectbox("Choose a model:", model_options)
 
 # Token slider
-max_tokens = st.slider("Max tokens to generate:", min_value=100, max_value=4000, value=1000, step=100)
+max_tokens = st.slider("Max tokens to generate:", min_value=100, max_value=8192, value=1000, step=100)
 
 # File uploader
 uploaded_file = st.file_uploader("Upload a file (optional)", type=["txt", "pdf", "docx"])
@@ -99,4 +99,4 @@ if prompt := st.chat_input("What would you like to ask?"):
 # Add a button to clear the chat history
 if st.button("Clear Chat History"):
     st.session_state.messages = []
-    st.experimental_rerun()
+    st.rerun()
