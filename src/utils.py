@@ -6,7 +6,6 @@ from typing import Generator, Iterator
 import anthropic
 import openai
 import constants
-import config
 
 
 DATA = Path(__file__).parent.parent / "data"
@@ -93,7 +92,7 @@ def get_text_input(custom: str | None = "") -> str:
     return text
 
 
-anthropic_client = anthropic.Client(api_key=config.ANTHROPIC_API_KEY)
+anthropic_client = anthropic.Client()
 
 
 def ai_chat(

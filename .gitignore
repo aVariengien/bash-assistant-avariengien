@@ -1,5 +1,7 @@
 data/
 *.txt
+*.json
+*.html
 __pycache__/
 config.py
 src/config.py
